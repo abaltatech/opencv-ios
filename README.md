@@ -7,6 +7,7 @@ This is a swift package that exposes opencv2.xcframework built from the official
   - [Swift Package Manager](#swift-package-manager)
   - [Xcode](#xcode)
 - [Documentation](#documentation)
+- [License](#license)
 - [Usage](#usage)
 ## Installation
 
@@ -43,6 +44,11 @@ Add https://github.com/abaltatech/opencv-ios.git to your package dependencies
 ## Documentation
 You can view the api reference docs at https://docs.opencv.org/4.x/  
 For more information you can visit the official [OpenCV](https://github.com/opencv/opencv) repository
+
+## License
+
+This package uses the same license as the official [OpenCV](https://github.com/opencv/opencv/blob/4.x/LICENSE) library. The license can be found in the [`LICENSE.md`](LICENSE.md) file.
+
 ## Usage
 Include the c++ headers
 ```c++
