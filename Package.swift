@@ -9,7 +9,7 @@ let checksum = "50dd78d19f614a1cc727afdb90abf7ba978970993d616f058413e7b72d3b8bc1
 let package = Package(
     name: "OpenCV",
     platforms: [
-        .macOS(.v10_13), .iOS(.v11), .macCatalyst(.v13)
+        .macOS(.v10_13), .iOS(.v16), .macCatalyst(.v13)
     ],
     products: [
         .library(
