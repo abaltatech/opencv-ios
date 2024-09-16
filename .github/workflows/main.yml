@@ -34,10 +34,18 @@ jobs:
           ref: refs/tags/${{ steps.get_version.outputs.VERSION }}
           path: 'opencv'
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Requirements
+        shell: bash
+        run: python3 -m pip install pathlib
+
       - name: Build xcframework
         working-directory: opencv
         run: |
-          pip3 install pathlib
           python3 platforms/apple/build_xcframework.py \
           --out ./build \
           --without=video \
