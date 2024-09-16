@@ -18,7 +18,7 @@ jobs:
           cmake-version: 3.24
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: opencv-abalta
 
@@ -28,7 +28,7 @@ jobs:
         run: echo "VERSION=$(cat .version)" >> $GITHUB_OUTPUT
 
       - name: Checkout OpenCV
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: opencv/opencv
           ref: refs/tags/${{ steps.get_version.outputs.VERSION }}
@@ -53,7 +53,7 @@ jobs:
         run: zip -r opencv2.xcframework.zip build/opencv2.xcframework
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: opencv2.xcframework.zip
           path: opencv/opencv2.xcframework.zip
@@ -64,10 +64,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: opencv2.xcframework.zip
 
@@ -89,7 +89,7 @@ jobs:
           git push
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
          files: opencv2.xcframework.zip
          tag_name: ${{ steps.get_version.outputs.VERSION }}
